@@ -1,0 +1,237 @@
+/* ==========================================================================
+   Menu page styles (scoped)
+   ========================================================================== */
+
+/* ===== Container ===== */
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fffdfa;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #0f1724;
+}
+
+/* ===== Page container ===== */
+.container-main {
+  margin: 2.25rem auto;
+  padding: 0 1rem;
+}
+
+/* ===== Category section ===== */
+.category {
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+}
+.category h1 {
+  font-family: 'Epilogue', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 700;
+  background: linear-gradient(90deg,#00bfa5,#1de9b6,#76ff03);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradientText 8s ease infinite;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.9,.3,1);
+}
+.category h1.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Gradient animation keyframes ===== */
+@keyframes gradientText {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Grid layout ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+/* ===== Card ===== */
+.menu-card {
+  background: linear-gradient(180deg,#ffffff 0%,#fbfbfb 50%,#f6f6f6 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(12,12,12,0.06);
+  display: flex;
+  flex-direction: column;
+  height: 38rem;      /* fixed card height */
+  transition: box-shadow .28s ease, transform .48s cubic-bezier(.22,.9,.35,1), opacity .48s ease;
+  will-change: transform, opacity;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.menu-card.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Card image ===== */
+.menu-card .img-wrap {
+  height: 22rem;      /* fixed image height */
+  overflow: hidden;
+  background: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-card .img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .9s cubic-bezier(.2,.9,.3,1), opacity .6s ease;
+  transform-origin: center center;
+  opacity: 0;
+  transform: none;
+}
+.menu-card .img-wrap img.animate-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ===== Card body ===== */
+.menu-card .card-body {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+/* ===== Title row ===== */
+.menu-card .title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: .5rem;
+}
+.menu-card h4 {
+  font-family: 'Epilogue', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color:#111;
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.price {
+  font-weight: 800;
+  color: #1b905f;
+  font-size: 1.14rem;
+}
+
+/* ===== Description (reserved 5 lines) ===== */
+.desc {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #6b6b6b;
+  font-size: .95rem;
+  margin: 0;
+  line-height: 1.45;
+  min-height: calc(1.45em * 5); /* reserve space for 5 lines */
+  max-height: calc(1.45em * 5); /* cap at 5 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;        /* Safari/Chrome */
+  -webkit-box-orient: vertical;
+  line-clamp: 5;                /* standard property */
+  box-orient: vertical;
+}
+
+/* ===== Footer ===== */
+.card-footer {
+  color:#5a5a5a;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem 1rem 1rem;
+  margin-top: auto;
+  gap: .5rem;
+}
+.add-btn {
+  background: linear-gradient(90deg, #26c281, #1fa56a);
+  border: none;
+  color: #fff;
+  padding: .45rem .7rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 8px 22px rgba(31,165,106,0.12);
+}
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(38,194,129,0.14);
+}
+.add-btn.disabled {
+  background: #c1c1c1;
+  cursor: default;
+  box-shadow: none;
+  padding: .45rem .5rem;
+  transform: none;
+}
+
+/* ===== Extra small devices (≤480px) ===== */
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .menu-card {
+    height: 42rem;
+  }
+  .card-footer {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== Small devices (481px–767px) ===== */
+@media (min-width: 481px) and (max-width: 767px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .menu-card {
+    height: 54rem;
+  }
+  .menu-card .img-wrap {
+    height: 40rem;
+  }
+}
+
+/* ===== Medium devices (768px–1024px) ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .menu-card {
+    height: 42rem;
+  }
+  .menu-card .img-wrap {
+    height: 26rem;
+  }
+  .card-footer {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== Large devices (≥1400px) ===== */
+@media (min-width: 1400px) {
+  .menu-card {
+    height: 42rem;
+  }
+  .menu-card .img-wrap {
+    height: 26rem;
+  }
+}

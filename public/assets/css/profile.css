@@ -1,0 +1,384 @@
+.mk-profile,
+.mk-profile-info {
+  min-height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #0f1724;
+  background: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+.mk-profile *,
+.mk-profile-info * {
+  box-sizing: border-box;
+}
+
+.mk-card {
+  position: relative;
+  width: 100%;
+  max-width: 40rem;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 1rem 2.5rem rgba(15,23,42,0.08);
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.sub {
+  margin: .75rem 0 1.5rem;
+  color: #64748b;
+  font-size: .95rem;
+}
+
+.mk-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-size: .9rem;
+  margin-bottom: .375rem;
+  color: #293241;
+}
+
+.field input,
+.field textarea {
+  padding: .75rem .875rem;
+  border-radius: .625rem;
+  border: 1px solid #e6ecf5;
+  background: #fff;
+  font-size: .95rem;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 .375rem 1.5rem rgba(13,110,253,0.06);
+}
+.mk-profile textarea,
+.mk-profile-info textarea { 
+  resize: vertical; 
+  min-height: 4rem; 
+}
+
+.mk-profile button,
+.mk-profile .mk-btn,
+.mk-profile .mk-btn-save,
+.mk-profile .orders-btn,
+.mk-profile .logout-link,
+.mk-profile-info button,
+.mk-profile-info .mk-btn,
+.mk-profile-info .mk-btn-save,
+.mk-profile-info .orders-btn,
+.mk-profile-info .logout-link {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mk-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem 1.2rem;
+  border-radius: .75rem;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  background: linear-gradient(90deg, #26c281, #1fa56a);
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 .5rem 1.625rem rgba(13,110,253,0.15);
+  transition: transform .12s ease, box-shadow .12s ease, background .2s ease;
+}
+
+.mk-btn:hover { 
+  transform: translateY(-0.1875rem); 
+  box-shadow: 0 .5rem 1.625rem rgba(13,110,253,0.25); 
+}
+
+.orders-btn {
+  background: linear-gradient(90deg, #f6c23e, #fd7e14);
+  color: #fff;
+  padding: .6rem 1rem;
+  border-radius: .75rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orders-btn:hover { 
+  transform: translateY(-0.125rem); 
+}
+
+.mk-btn-save {
+  background: linear-gradient(90deg, #0d6efd, #198754);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  padding: .45rem 0;
+  transition: opacity .18s ease;
+}
+
+.mk-btn-save:hover { 
+  opacity: .85; 
+}
+
+.mk-profile .mk-btn {
+  display: block;
+  width: fit-content;
+  margin: .5rem auto 0;
+  background: linear-gradient(90deg, #0d6efd, #198754);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  padding: .45rem 0;
+  transition: opacity .18s ease;
+  box-shadow: none;
+  text-align: center;
+}
+
+.mk-profile .mk-btn:hover { 
+  opacity: .85; 
+  transform: none; 
+}
+
+.logout-form { 
+  margin: 0; 
+}
+.logout-link {
+  background: none;
+  border: none;
+  color: #dc3545;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: inline-block;
+  padding: .25rem .5rem;
+}
+
+.logout-link:hover { 
+  color: #b02a37; 
+}
+
+.alert-success {
+   margin-bottom: 1rem; 
+   font-size: 1rem; 
+   font-weight: 600; 
+   color: #a9a718; 
+   text-align: center; 
+  }
+
+.alert-error { 
+  margin-top: 1rem; 
+  font-size: 1rem; 
+  font-weight: 600; 
+  color: #dc3545; 
+  text-align: center; 
+}
+
+.muted { 
+  color: #6b6b6b; 
+  font-weight: 600; 
+}
+
+.mk-profile {
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2.25rem;
+}
+
+.mk-profile .mk-card {
+  max-width: 40rem;
+  padding: 2rem 2.5rem;
+}
+
+.mk-profile .mk-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mk-profile .mk-header h1 {
+  font-family: 'Epilogue', Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0;
+  color: #0f1724;
+}
+
+.mk-profile-info {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.mk-profile-info .mk-card {
+  max-width: 33rem;
+  padding: 3.5rem 2rem 3rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.mk-profile-info .mk-avatar {
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ff8a3d 0%, #26c281 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: 0 .5rem 1.25rem rgba(13,110,253,0.15);
+}
+
+.mk-profile-info .mk-name {
+  font-family: 'Epilogue', Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: .5rem 0 1.25rem;
+  color: #198754;
+  text-align: center;
+}
+
+.mk-profile-info .edit-link {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.mk-profile-info .edit-icon {
+  width: 22px;
+  height: 22px;
+  fill: #1d4ed8;
+  transition: fill .18s ease, transform .18s ease;
+}
+.mk-profile-info .edit-link:hover .edit-icon { 
+  fill: blue; 
+  transform: scale(1.08); 
+}
+
+.mk-profile-info .profile-details {
+  text-align: left;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+.mk-profile-info .profile-details strong { 
+  color: rgb(70,0,70); 
+  font-size: 1.05rem; 
+}
+.mk-profile-info .profile-details p { 
+  color: #6b6b6b; 
+  font-size: 1.05rem; 
+  margin: 0; 
+}
+
+.mk-profile-info .mk-actions { 
+  margin-bottom: 2rem; 
+  display: flex; 
+  gap: 1rem; 
+  justify-content: center; 
+}
+
+.mk-card { 
+  overflow: visible; 
+}
+
+/* Responsiveness*/
+@media (max-width: 420px) {
+  .mk-card { 
+    padding: 1rem; 
+  }
+
+  .mk-profile-info .mk-avatar { 
+    width: 4.75rem; 
+    height: 4.75rem; 
+    top: -2.25rem; 
+  }
+
+  .mk-profile-info .mk-name { 
+    font-size: 1.05rem; 
+  }
+
+  .mk-btn, .orders-btn { 
+    padding: .5rem .9rem; 
+    font-size: .95rem; 
+  }
+
+  .mk-btn-save { 
+    font-size: 1rem; 
+  }
+}
+
+@media (max-width: 900px) {
+  .mk-profile, .mk-profile-info { 
+    padding: 1rem; 
+  }
+
+  .mk-card { 
+    padding: 1.25rem; 
+    border-radius: .75rem; 
+  }
+
+  .mk-profile .mk-card { 
+    max-width: 100%; 
+  }
+
+  .mk-profile-info .mk-card { 
+    max-width: 100%; 
+    padding-top: 3rem; 
+  }
+
+  .mk-profile-info .mk-avatar { 
+    top: -2.5rem; 
+    width: 5.25rem; 
+    height: 5.25rem; 
+    font-size: 1.6rem; 
+  }
+
+  .mk-profile-info .mk-name { 
+    font-size: 1.2rem; 
+  }
+
+  .mk-profile .field input, .mk-profile .field textarea,
+  .mk-profile-info .field input, .mk-profile-info .field textarea { 
+    font-size: .95rem; 
+  }
+  
+}
+
